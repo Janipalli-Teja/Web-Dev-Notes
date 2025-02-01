@@ -1,0 +1,219 @@
+-------------------------------NODE JS ------------------------------------------------
+
+<--Introduction to Node.js-->
+Node.js is an open-source and cross-platform JavaScript runtime environment.
+we can use
+-->node server.js
+-->node server
+ to run the js file 
+
+for adding a package json file 
+-->npm init 
+in the required folder 
+
+
+
+<--Modules in NodeJS-->
+Modules in Node.js are blocks of encapsulated code that can be reused throughout your application. These modules can include functions, objects, and variables that are exported from the code files.
+
+Every Node.js file can be considered a module that can export code for reuse in other parts of the application.
+
+Modules in Node.js are like JavaScript libraries
+
+--Node.js module is an object that contains the following key properties:
+-->exports: The object that a module can export for use in other modules.
+-->require(): A function that is used to import modules into other modules.
+-->module: The object that represents the current module.
+
+-->exporting local modules<--
+module.exports={
+    add,
+    sub,
+}
+or 
+module.exports={
+    add_func:add,
+    sub_func:sub,
+}
+or
+
+exports.add=(a,b)=>{
+    return a+b;
+};
+
+exports.sub=(a,b)=>{
+    return a-b;
+};
+
+-->importing local<--
+const math=require("./module");
+
+-->usage 
+console.log(math.add(2,3))
+console.log(math.sub(2,3))
+
+importing external libraries
+const https=require("http");
+
+
+<---File handling in Node.js--->
+The file can be read and written in node.js in both Synchronous and Asynchronous ways.
+refer net
+
+<---http-->
+Building a http server 
+-->const http=require("http")   -- where http is in-built module 
+creating a server 
+let server=http.createServer((req,res)=>{});
+
+example...
+const http=require("http");
+
+let my_server=http.createServer((req,res)=>{
+    console.log("server created");
+    res.end("this is example");
+});
+
+my_server.listen(4000,()=>{console.log("server started")});
+
+example......
+const http=require("http");
+let fs=require("fs");
+
+let my_server=http.createServer((req,res)=>{
+    let address=`${Date.now()} on ${req.url}\n`;
+    fs.appendFile("records.txt",address,(err,data)=>{
+        switch(req.url){
+            case "/":res.end("this is home page");
+            break;
+            case "/career":res.end("this is career page");
+            break;
+            default:res.end("404 server not found");
+        }
+    });
+})
+
+my_server.listen(4000,()=>{console.log("server started")});
+
+
+
+<---URL--->
+url module install
+-->npm i url
+
+usage 
+-->const url=require("url");
+
+url methods
+-->url.parse(req.url)  --> return url object with properties
+-->url
+
+
+<---HTTP METHODS--->
+1.GET
+2.POST
+3.DELETE
+4.PUT
+5.PATCH
+.
+.
+
+
+
+
+
+-------------------------------------EXPRESS JS --------------------------------------
+
+It simplifies the development of server-side applications by offering an easy-to-use API for routing, middleware, and HTTP utilities.
+1.Built on Node.js for fast and scalable server-side development.
+2.Simplifies routing and middleware handling for web applications.
+3.Supports building REST APIs, real-time applications, and single-page applications.
+4.Provides a lightweight structure for flexible and efficient server-side development.
+
+
+<----Basic routing--->
+Routing refers to determining how an application responds to a client request to a particular endpoint, which is a URI (or path) and a specific HTTP request method (GET, POST, and so on).
+
+routing structure
+app.METHOD(PATH, HANDLER);
+
+1.app is an instance of express.
+2.METHOD is an HTTP request method, in lowercase.
+3.PATH is a path on the server.
+4.HANDLER is the function executed when the route is matched.
+
+
+<---REST API--->
+server which uses particular methods with respective to the operation .. and follows the rules 
+
+
+example...just for syntax..
+const express=require("express");
+
+let app=express();
+
+
+app.get("/",(req,res)=>{
+    return res.send("Hi Guys...");
+})
+app.post("/home",(req,res)=>{    // gets cant connect to ....
+    return res.send("got a post request in home page");
+})
+app.get("/feedback",(req,res)=>{
+    return res.send("this is feedback page");
+})
+
+app.listen(5000,()=>{console.log("server started")});
+
+
+
+example.....
+const express=require("express");
+const users=require("./MOCK_DATA.json");
+const app=express();
+
+app.get("/api/users",(req,res)=>{
+    return res.json(users);
+});
+app.get("/users",(req,res)=>{
+    const html=`
+    <ul>
+       ${users.map((user)=>`<li>${user.first_name}</li>`).join("")}
+    </ul>
+    `;
+    res.send(html);
+
+});
+
+app.get("/api/users/:id",(req,res)=>{
+    const id=req.params.id
+    const user=users.find((user)=>user.id==id)
+    return res.json(user);
+})
+app.listen(5000,()=>console.log("server Started"));
+
+
+
+
+
+
+<---Express Middleware----->
+
+Middleware functions are functions that have access to the request object (req), the response object (res), and the next function in the application’s request-response cycle. The next function is a function in the Express router which, when invoked, executes the middleware succeeding the current middleware.
+
+Middleware functions can perform the following tasks:
+
+>Execute any code.
+>Make changes to the request and the response objects.
+>End the request-response cycle.
+>Call the next middleware in the stack.
+
+
+
+
+HTTP Status Codes
+100-199 ->informatino responses
+200-299 ->succesfull responses
+300-399 ->redirection responses
+400-499 ->client error responses
+500-599 ->server error responses

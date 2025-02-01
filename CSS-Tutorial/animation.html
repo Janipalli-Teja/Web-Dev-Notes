@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animations</title>
+    <style>
+        .container{
+            height: 200px;
+            width: auto;
+            background-color: black;
+            display: flex;
+            box-sizing: border-box;
+        }
+        .box{
+            height: 150px;
+            width: 150px;
+            background-color: blue;
+            margin: 20px;
+            animation-name: leftbox;
+            position: relative; /* Add this line */
+        }
+        @keyframes leftbox{
+            from{
+                left: 1%;
+                top: 1%;
+            }
+            to{
+                left: 90%;
+                top: 1%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">Mood Spoiled</div>
+    </div>
+</body>
+</html>

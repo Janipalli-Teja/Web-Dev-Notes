@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position-property</title>
+    <style>
+        img {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .container {
+            border: 2px solid black;
+            margin: 50px;
+            height: 300px;
+        }
+
+        .container1 {
+            border: 2px solid black;
+            margin: 50px;
+            height: 1000px;
+        }
+
+        /* comment out each img styles to see the difference */
+        .img2 {
+            bottom: 30px;
+        }
+
+        /* relative */
+        .img22 {
+            position: relative;
+            bottom: 40px;
+        }
+
+        .img33 {
+            position: relative;
+            left: 350px;
+        }
+
+        .img44 {
+            position: relative;
+            right: 350px;
+        }
+
+        .img11 {
+            position: relative;
+            top: 50px;
+        }
+
+        /*absolute */
+        .img111 {
+            position: absolute;
+            left: 20px;
+        }
+
+        /* fixed  (check by zooming out)*/
+        .img1111 {
+
+            position: fixed;
+        }
+        .img3333 {
+
+            position: sticky;
+            top: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    </div>
+    <h2>position:fixed and sticky</h2>
+
+    <div class="container1">
+        <!--  img tag is an inline element but it behaves like an inline-block -->
+        <img src="img1.jpeg" alt="image1" class="img1111">
+        <img src="img2.jpeg" alt="image2" class="img2222">
+        <img src="img3.jpeg" alt="image3" class="img3333">
+        <img src="img4.jpeg" alt="image4" class="img4444">
+    </div>
+    <h2>static</h2>
+    <div class="container">
+        <!--  img tag is an inline element but it behaves like an inline-block -->
+        <img src="img1.jpeg" alt="image1" class="img1">
+        <img src="img2.jpeg" alt="image2" class="img2">
+        <img src="img3.jpeg" alt="image3" class="img3">
+        <img src="img4.jpeg" alt="image4" class="img4">
+    </div>
+    <h2>position:relative</h2>
+    <h3>Leaves the image space and moves</h3>
+    <div class="container">
+        <!--  img tag is an inline element but it behaves like an inline-block -->
+        <img src="img1.jpeg" alt="image1" class="img11">
+        <img src="img2.jpeg" alt="image2" class="img22">
+        <img src="img3.jpeg" alt="image3" class="img33">
+        <img src="img4.jpeg" alt="image4" class="img44">
+    </div>
+    <h2>position:absolute</h2>
+    <h3>this overlaps the current element(image) with next one </h3>
+    <div class="container">
+        <!--  img tag is an inline element but it behaves like an inline-block -->
+        <img src="img1.jpeg" alt="image1" class="img111">
+        <img src="img2.jpeg" alt="image2" class="img222">
+        <img src="img3.jpeg" alt="image3" class="img333">
+        <img src="img4.jpeg" alt="image4" class="img444">
+
+</body>
+
+</html>

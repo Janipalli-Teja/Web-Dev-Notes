@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Event Registration</legend>
+        <label for="name">Name:</label><br>
+        <input type="text" name="name" id="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email"><br>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required><br>
+        <label for="occupation">Occupation</label><br>
+        <select name="job" id="occupation">
+            <option value="lawyer">Lawyer</option>
+            <option value="police">Police</option>
+            <option value="Engineer">Engineer</option>
+            <option value="doctor">Doctor</option>
+        </select><br><br>
+        <label for="topics">Topics Interested</label><br>
+        <input type="checkbox" id="html" name="topics"><label for="html">Html</label><br>
+        <input type="checkbox" id="css" name="topics"><label for="css">Css</label><br>
+        <input type="checkbox" id="javascript" name="topics"><label for="javascript">Javascript</label><br>
+        <label for="comments">Comments</label><br>
+        <textarea name="comments" id="comments" placeholder="Enter here"></textarea>
+        <label for="register"></label>
+        <input type="button" name="register" id="register" value="Register">
+    </fieldset>
+
+    <h2>Job Application</h2>
+    <label for="name">Name:</label><br>
+    <input type="text" name="name" id="name"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" id="email"><br>
+    <label for="phone">Phone:</label><br>
+    <input type="tel" name="phone" id="phone" pattern="[0-9]{10}" required><br>
+    <label for="resume">Resume:</label><br>
+    <input type="file" name="resume" id="resume"> <br>
+    <label for="experience">Experience(years)</label>   <br>
+    <input type="number" name="exp" id="experience">
+    <fieldset>
+        <legend><label for="skills">Skills :</label></legend>
+        <input type="checkbox" name="skills" id="html">
+        <label for="html">HTML</label><br>
+        <input type="checkbox" name="skills" id="css">
+        <label for="css">CSS</label><br>
+
+    </fieldset>
+    <label for="education">Highest Education</label><br>
+    <select name="education" id="education">
+        <option value="degree">Gegree</option>
+        <option value="inter">Inter(10+2)</option>
+        <option value="tenth">10th Standard</option>
+    </select><br>
+    <fieldset>
+        <legend>Availabity:</legend><br>        
+        <input type="radio" name="availabity" id="available1">
+        <label for="available1">Full-Time</label><br>
+        <input type="radio" name="availabity" id="available2">
+        <label for="available2">part-Time</label>
+    </fieldset>
+    <details>
+        <summary>This is a question</summary>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt totam reprehenderit dolor voluptas non corrupti, repudiandae facere quidem pariatur odit deserunt magni sint tempore dolorem. Doloribus repudiandae neque ullam cupiditate.</p>
+    </details>
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox</title>
+    <style>
+        /* flex-direction */
+        .container{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction: row;
+        }
+        .container1{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction:row-reverse;
+        }
+        .container2{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction:column;
+        }
+        .container3{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction:column-reverse;
+        }
+        .box{
+            margin: 5px;
+            height: 50px;
+            width: 50px;
+            border: 2px solid black;
+        }
+        #box1{
+            background-color: blue;
+        }
+        #box2{
+            background-color: green;
+        }
+        #box3{
+            background-color: yellow;
+        }
+        #box4{
+            background-color: brown;
+        }
+        /* flex-wrap */
+        .container4{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .container5{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction:row-reverse;
+            flex-wrap:wrap-reverse;
+        }
+        /* flex-flow */
+        .container6{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction:row;
+            flex-flow:row wrap;
+        }
+        .container7{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction:row;
+            flex-flow:row wrap-reverse;
+        }
+        /* justify content - main axis X(horizontal) when items are in rows */
+        .container8{
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            /* justify-content: start; */
+            /* justify-content: end; */
+            /* justify-content: center; */
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+            justify-content: space-evenly;
+        }
+        /* justify-content --main axis Y(vertical) when items are in columns */
+        .container9{
+            height: 400px;
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-direction:column ;
+            /* justify-content: start; */
+            /* justify-content: end; */
+            /* justify-content: center; */
+            /* justify-content: space-around; */
+            /* justify-content: space-between; */
+            justify-content: space-evenly;
+        }
+        /* align-items -- cross axis X(horizontal) */
+        .container10{
+            height: 400px;
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            /* align-items: start; */
+            /* align-items: center; */
+            /* align-items: stretch; */
+            /* align-items: end; */
+        }
+        /* align-items --cross axis Y(vertical) */
+        .container11{
+            height: 400px;
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            /* flex-direction: column; */
+            /* align-items: start; */
+            /* align-items: center; */
+            /* comment out the boxes height size to review this strech-property  */
+            align-items: stretch;  
+            align-items: end;
+        }
+        .container12{
+            height: 400px;
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        /* align-content */
+        .container13{
+            height: 400px;
+            background-color: beige;
+            border: 5px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            /* align-content: center; */
+            /* align-content: start; */
+            /* align-content: end; */
+            /* align-content: space-around; */
+            align-content: space-between;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>display:flex</h>
+    <h2>1] flex-direction : row(By default)</h2>
+    <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h2>2] flex-direction : row-reverse </h2>
+    <div class="container1">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h2>3] flex-direction : column</h2>
+    <div class="container2">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h2>4] flex-direction : column-reverse</h2>
+    <div class="container3">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    
+    <h2>Flex-Wrap:wrap; (default : nowrap)</h2>
+    <h2>1] flex-direction:row;</h2>
+    <div class="container4">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h2>Flex-Wrap:wrap-reverse;</h2>
+    <h2>2] flex-direction : row-reverse </h2>
+    <div class="container5">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+
+    <h2>3] flex-flow: row-wrap (Flex-direction + flex-wrap = flex-flow: fd fw)</h2>
+    <div class="container6">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h2>4] flex-flow : row wrap-reverse</h2>
+    <div class="container7">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <br><br><br>
+    <hr>
+    <h1>justify-content - incase of row</h1>
+    <div class="container8">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h1>justify-content - incase of column</h1>
+    <div class="container9">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h1>align-items  -- incase of row</h1>
+    <div class="container10">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h1>align-items  -- incase of column</h1>
+    <div class="container11">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h1>align-items + justify-content</h1>
+    <div class="container12">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+    <h1>align-items + align-content</h1>
+    <div class="container13">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+        <div class="box" id="box4"></div>
+    </div>
+</body>
+</html>

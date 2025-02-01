@@ -1,0 +1,33 @@
+Debugging in the browser
+Debugging is the process of finding and fixing errors within a script
+
+
+The “Sources” panel
+The Sources panel has 3 parts:
+The File Navigator pane lists HTML, JavaScript, CSS and other files, including images that are attached to the page. Chrome extensions may appear here too.
+The Code Editor pane shows the source code.
+The JavaScript Debugging pane is for debugging, we will explore it soon.
+
+
+Console
+We can type commands there and press Enter to execute.
+
+Breakpoints
+A breakpoint is a point of code where the debugger will automatically pause the JavaScript execution.
+We can always find a list of breakpoints in the right panel. That’s useful when we have many breakpoints in various files. It allows us to:
+
+Quickly jump to the breakpoint in the code (by clicking on it in the right panel).
+Temporarily disable the breakpoint by unchecking it.
+Remove the breakpoint by right-clicking and selecting Remove.
+
+The command “debugger”
+We can also pause the code by using the debugger command in it, like this:
+
+function hello(name) {
+  let phrase = `Hello, ${name}!`;
+
+  debugger;  //  the debugger stops here
+
+  say(phrase);
+}
+Such command works only when the development tools are open, otherwise the browser ignores it.

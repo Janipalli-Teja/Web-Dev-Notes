@@ -1,0 +1,13 @@
+ASCII - American Standard Code for Information Interchange
+ECMAscript- European computer manufacturers Association
+DNS-Domain Name System (server)
+DNR-Domain Name Resolution
+ISP-Internet service Provider
+NSP-Network Service Provider
+TCP-Transmission Control Protocol
+HTTPS-Hypertext Transfer Protocol Secure
+FTP-File Transfor Protocol
+URL-Uniform Resource Locator
+JSON-JavaScript Object Notation
+SSR-Server Side Rendering
+XML-Extensible Markup Language

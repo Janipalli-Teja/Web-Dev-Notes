@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex-Item , Align-self</title>
+    <style>
+        .container{
+            border: 1px solid black;
+            display:flex;
+
+        }
+        .container1{
+            border: 1px solid black;
+            display:flex;
+            flex-direction: column;
+
+        }
+        .box{
+            height: 150px;
+            width:150px;
+            border: 1px solid black;
+            margin: 5px;
+            background-color: goldenrod;
+            display:flex;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .boxi{
+            background-color:lightblue;
+            padding: 20px;
+            margin: 5px;
+        }
+        /* flex-shrink */
+        #box4{
+            flex-shrink: 4;
+        }
+        /* flex-grow */
+        .boxe{
+            height: 150px;
+            width:150px;
+            border: 1px solid black;
+            margin: 5px;
+            background-color: goldenrod;
+            display:flex;
+            text-align: center;
+            justify-content: center;
+            flex-direction: column;
+            flex-grow: 1;
+
+        }
+        #box1{
+            flex-grow: 1;
+        }
+        #box2{
+            flex-grow: 2;
+        }
+        #boxba{
+            flex-basis: 200px;
+        }
+        #self-box{
+            align-self: center;
+            /* align-self: self-start; */
+            /* align-self: self-end ; */
+            /* align-self: stretch; */
+        }
+
+    </style>
+</head>
+<body>
+    <h2>flex-shrink:4; on box4</h2>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box" id="box4">4</div>
+    </div>
+    <h2>flex-grow:1; on all boxes</h2>
+    <div class="container">
+        <div class="boxe">1</div>
+        <div class="boxe">2</div>
+        <div class="boxe" id="box3">3</div>
+        <div class="boxe" >4</div>
+    </div>
+    <h2>flex-grow: 1; on box1 and flex-grow: 2; on box2</h2>
+    <div class="container">
+        <div class="box" id="box1">1</div>
+        <div class="box" id="box2">2</div>
+        <div class="box" >3</div>
+        <div class="box" >4</div>
+    </div>
+    <h2>flex-basis:200px on box1</h2>
+    <div class="container">
+        <div class="box" id="boxba">1</div>
+        <div class="box" >2</div>
+        <div class="box" >3</div>
+        <div class="box" >4</div>
+    </div>
+    <h2>Align-self:center</h2>
+    <div class="container1">
+        <div class="boxi" id="self-box">1</div>
+        <div class="boxi" >2</div>
+        <div class="boxi" >3</div>
+        <div class="boxi" >4</div>
+    </div>
+</body>
+</html>

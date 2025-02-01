@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Css</title>
+    <style>
+        div{
+            border: 2px solid red;
+        }
+        span{
+            border: 2px solid blue;
+        }
+        .box1{
+            border: 2px solid red;
+            height: 200px;
+            width: 200px;
+            padding: 20px;
+        }
+        .box2{
+            border: 2px solid red;
+            height: 200px;
+            width: 200px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .inbo1{
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+            text-align:center;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Block-level Elements -->
+     <!-- A block-level element always starts on a new line, and the browsers automatically add some space (a margin) before and after the element -->
+    <!-- Some of the block elements are -->
+     <!--<address>
+        <article>
+            <aside>
+                <blockquote>
+                    <canvas>
+                        <dd>
+                            <div>
+                                <dl>
+                                    <dt>
+                                        <fieldset>
+                                            <figcaption>
+                                                <figure>
+                                                    <footer>
+                                                        <form>
+                                                            <h1>-<h6>
+                                                                <header>
+                                                                    <hr>
+                                                                    <li>
+                                                                        <main>
+                                                                            <nav>
+                                                                                <noscript>
+                                                                                    <ol>
+                                                                                        <p>
+                                                                                            <pre>
+                                                                                                <section>
+                                                                                                    <table>
+                                                                                                        <tfoot>
+                                                                                                            <ul>
+                                                                                                                <video>
+                                                                                                                -->
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quidem?
+    </div>
+    <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, quidem?
+    </div>
+    <!-- Inline Elements -->
+     <!-- for this inline elements we cannot apply height, width and custom margins-->
+     <!-- span is available inline element -->
+    <span>Teja </span>
+    <span>Janipalli</span>
+    <a href="#">Achor tag1</a>
+    <a href="#">Achor tag2</a>
+
+    <!-- Box-sizing:border-box  -->
+     <!-- The CSS box-sizing property allows us to include the padding and border in an element's total width and height. -->
+    <p class="box1">height-200px ,width-200px , border-2px,padding-20px , total box size-242px*242px</p>
+    <p class="box2">height-200px ,width-200px , padding-20px with box-sizing , total box size - 200px*200px</p>
+
+    <!-- Inline Block -->
+     <span class="inbo1">this is inline-block</span>
+     <span class="inbo1">this is inline-block</span>
+     <span class="inbo1">this is inline-block</span>
+    </body>
+
+</html> 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        @media (min-width:640px){
+            .container1{
+                flex-direction: row;
+            }
+        }
+        @media (max-width:640px){
+            .container1{
+                flex-direction: column;
+            }
+        }
+        .container1{
+            background-color: beige;
+            border: 1px solid black;
+            display: flex;
+        }
+        .box1{
+            height: 150px;
+            width:150px;
+            border:1px solid black;
+            background-color: red;
+            margin:5px;
+
+        }
+
+        /* exp1 */
+        .exp1{
+            background-color: bisque;
+            display: flex;
+
+        }
+        .items{
+            height: 200px;
+            width: 200px;
+        }
+        @media (min-width:0px) and (max-width:600px){
+            .exp1{
+                flex-direction: column;
+            }
+        }
+        @media (min-width:600px){
+            .exp1{
+                flex-direction: row;
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container1">
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+        <div class="box1"></div>
+    </div>
+    <div class="exp1">
+        <div class="items">
+            <p id="item1">Teja Janipalli</p>
+            <p id="item2">Web Developer</p>
+        </div>
+        <div class="items"><img src="img1.jpeg" alt="image1"></div>
+    </div>
+</body>
+</html>

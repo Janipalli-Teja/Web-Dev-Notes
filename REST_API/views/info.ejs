@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+</head>
+
+<body>
+    <h1>This is <%=obj.name%>
+    </h1>
+    <p>im <%= obj.age%> and studing <%=obj.study%>
+    </p>
+    <ul>
+        <% obj.hobbies.forEach((item)=>{%>
+            <li>
+                <%=item%>
+            </li>
+            <%});%>
+    </ul>
+    <p>status : <%- obj1.status%> <br> relationship : <%- obj1.relation%></p>
+
+</body>
+
+</html>

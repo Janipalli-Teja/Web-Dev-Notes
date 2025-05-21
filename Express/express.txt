@@ -1,0 +1,72 @@
+---------------------------------MIDDLE WARE-----------------------------------------------
+
+
+
+
+const express=require("express")
+
+const app=express()
+
+
+//////////////////// Flow 1 \\\\\\\\\\\\\\\\\\\\\\\
+app.use(greet)----------------------------------------------
+                                                            |
+app.get("/",(req,res,next)=>{ <-----------------------------|---------
+    res.send("this is from get method");                    |        |
+                                                            |        |
+})                                                          |        |
+                                                            |        |
+app.get("/user",(req,res)=>{                                |        |
+    res.send(`this is from user `);                         |        |
+    console.log("posted")                                   |        |
+})                                                          |        |
+                                                            |        |
+                                                            |        |
+                                                            |        |
+//this is middleware function                               |        |
+function greet(req,res,next){  <----------------------------         |
+    console.log("this is middleware");                               |
+    next() -----------------------------------------------------------
+}
+app.listen(3000);
+
+
+//////////////////// Flow 2 \\\\\\\\\\\\\\\\\\\\\\\
+
+app.get("/",greet,(req,res)=>{    -------------------------   
+    res.send("this is from get method");                   |  <----------|
+})                                                         |             |
+                                                           |             |
+app.get("/user",(req,res)=>{                               |             |
+    res.send(`this is from user `);                        |             |
+    console.log("posted")                                  |             |
+})                                                         |             |
+                                                           |             |
+function greet(req,res,next){    <--------------------------             |
+    console.log("this is middleware");                                   |
+    next()  -------------------------------------------------------------
+}
+app.listen(3000);
+
+//////////////////// Flow 3 \\\\\\\\\\\\\\\\\\\\\\\  not recommended 
+
+app.get("/",(req,res,next)=>{
+    res.send("this is from get method");
+    next();  ---------|                         
+})                    |
+app.use(greet)  <-----|               -----|
+                                           |
+app.get("/user",(req,res)=>{               |
+    res.send(`this is from user `);        |
+    console.log("posted")                  |
+})                                         |
+                                           |
+function greet(req,res,next){   <----------|
+    console.log("this is middleware");
+    next()
+}
+app.listen(3000);
+
+
+
+

@@ -7,7 +7,7 @@ app.use(express.json())
 
 
 // connecting mongo server 
-mongoose.connect("mongodb://localhost:27017/practiceDB")
+mongoose.connect("mongodb:")
 .then(()=>{
     console.log("mongodb connected");
 }).catch((err) =>{
